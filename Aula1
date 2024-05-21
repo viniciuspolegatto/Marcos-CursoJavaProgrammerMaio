@@ -1,1 +1,16 @@
-Teste
+Para clonar um repositorio do git utilize o:
+	git clone <url do repositorio>
+
+Para verificar as diferenças entre o local e o remoto utilize o:
+	git status
+
+Para adicionar o arquivo no backStage utilize o comando: 
+	
+	git add . (para adicionar tudo)
+
+Para adicionar a descrição da alteração e "commitar" utilize o comando:
+	git commit -m "Comentario das alteções"
+
+Para trasnferir os arquivos e finalizar utilize o comando:
+
+	git push
