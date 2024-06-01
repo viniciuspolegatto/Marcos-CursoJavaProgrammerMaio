@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\JAVA PROGRAMMING - Autonomo\7 - Aula_31_05\7 - 3 Animais\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2630623545.index
+2545133430.index
