@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+D:\JAVA PROGRAMMING - Autonomo\9 - Banco de Dados\9 - ConexaoExercicio\.metadata\.plugins\org.eclipse.jdt.core
+1360157575.index
+2389138773.index
+2630623545.index
+1865797976.index
