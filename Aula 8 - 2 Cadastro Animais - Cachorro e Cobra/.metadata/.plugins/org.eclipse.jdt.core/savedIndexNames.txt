@@ -1,8 +1,0 @@
-INDEX VERSION 1.134+D:\JAVA PROGRAMMING - Autonomo\8 - Cadastro Animais\8 - 2 Cadastro Prof\.metadata\.plugins\org.eclipse.jdt.core
-3346346104.index
-1753892539.index
-3256847395.index
-1035193402.index
-1865797976.index
-3612423356.index
-2630623545.index

@@ -1,7 +1,6 @@
 package tela;
 
 import java.awt.Dimension;
-import java.awt.TextField;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -67,7 +66,7 @@ public class TelaSelecionarAlterarCobra {
 		framealterarCobras.add(panelListarCobra);
 		framealterarCobras.setVisible(true);
 		
-		TelaSelecionarAlterarCobraControlador alterarCobraControlador = new TelaSelecionarAlterarCobraControlador(caf, framealterarCobras);
-		botaoalterar.addActionListener(alterarCobraControlador);
+		TelaSelecionarAlterarCobraController alterarCobraController = new TelaSelecionarAlterarCobraController(caf, framealterarCobras);
+		botaoalterar.addActionListener(alterarCobraController);
 	}
 }

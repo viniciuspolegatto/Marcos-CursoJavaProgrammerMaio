@@ -10,9 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import org.w3c.dom.Text;
-
-import controlador.TelaDeletarCobraControlador;
+import controlador.TelaDeletarCobraController;
 import entidade.Cobra;
 
 public class TelaDeletarCobra {

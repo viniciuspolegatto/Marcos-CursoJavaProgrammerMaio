@@ -1,13 +1,16 @@
 package controlador;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import entidade.Cobra;
 import gerenciaArquivo.ManipuladorArquivo;
-import persistencia.DaoCobra;
+//import persistencia.DaoCobra;
+import repositorio.CobraRepositorioImplementacao;
 
 public class TelaCadastroCobraController implements ActionListener {
 
@@ -17,7 +20,8 @@ public class TelaCadastroCobraController implements ActionListener {
 	
 	
 	ManipuladorArquivo manipuladorArquivo = new ManipuladorArquivo();
-	DaoCobra daoCobra = new DaoCobra();
+	//DaoGerente daoGerente = new DaoGerente(); NUNCA DEVEMOS CHAMAR A DAO PELO CONTROLLER
+	CobraRepositorioImplementacao cobraRepositorioImp = new CobraRepositorioImplementacao();
 	
 	
 	public TelaCadastroCobraController(JTextField caixaTextoPrimeiroCampoRecebidoNome,
@@ -32,7 +36,7 @@ public class TelaCadastroCobraController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		registrarArquivo();
+		registrarNoBanco();
 		
 		System.out.println("o nome: " + caixaTextoPrimeiroCampoRecebidoNome.getText());
 		System.out.println("o caf: " + caixaTextoSegundoCampoRecebidoCaf.getText());
@@ -41,14 +45,22 @@ public class TelaCadastroCobraController implements ActionListener {
 		
 	}
 	
-	public void registrarArquivo() {
+	public void registrarNoBanco() {
 		Cobra cobra = new Cobra();
 		cobra.setNome(caixaTextoPrimeiroCampoRecebidoNome.getText());
 		cobra.setCaf(caixaTextoSegundoCampoRecebidoCaf.getText());
 		cobra.setEspecie(caixaTextoTerceiroCampoRecebidoEspecie.getText());
 		
 		manipuladorArquivo.registrarCobra(cobra);
-		daoCobra.salvarCobra(cobra);
+		
+		
+		if(cobraRepositorioImp.salvarCobraRepositorio(cobra)){
+			JOptionPane.showMessageDialog(null, "Salvou com sucesso");
+		}else {
+			JOptionPane.showMessageDialog(null, "Sem sucesso - Não Salvou");
+			
+		}
+		
 	}
 
 }

@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import repositorio.CobraRepositorio;
 import repositorio.CobraRepositorioImplementacao;
 import tela.TelaMenuCobra;
 
@@ -15,7 +14,7 @@ public class TelaDeletarCobraController implements ActionListener {
 
 	TextField cafRecebido;
 	JFrame frameDeletar;
-	CobraRepositorioImplementacao cobraRepositorioImplemetacao = new CobraRepositorioImplementacao();
+	CobraRepositorioImplementacao cobraRepositorioImplementacao = new CobraRepositorioImplementacao();
 	
 	TelaMenuCobra telaMenuCobra = new TelaMenuCobra();
 	
@@ -32,7 +31,7 @@ public class TelaDeletarCobraController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		if(cobraRepositorioImplemetacao.excluirCobraRepositorio(cafRecebido.getText())) {
+		if(cobraRepositorioImplementacao.excluirCobraRepositorio(cafRecebido.getText())) {
 			JOptionPane.showMessageDialog(null, "A cobra de CAF " + cafRecebido.getText() + " foi deletada");
 			frameDeletar.setVisible(false);
 			telaMenuCobra.chamarTelaMenuCobra();

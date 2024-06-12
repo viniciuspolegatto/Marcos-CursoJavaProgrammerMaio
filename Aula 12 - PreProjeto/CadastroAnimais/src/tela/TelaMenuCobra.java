@@ -14,6 +14,7 @@ public class TelaMenuCobra {
 	
 	public void chamarTelaMenuCobra() {
 		GridLayout grid = new GridLayout (0,1);
+		
 		JFrame frameTelaMenuCobra = new JFrame();// Instanciando um JFrame Vazio
 		
 		frameTelaMenuCobra.setSize(200 , 200); // Altura e largura
@@ -25,8 +26,12 @@ public class TelaMenuCobra {
 		JLabel labelOpcaoListaCobra = new JLabel("C2 - LISTAR COBRA");//Cria a label 1
 		panelTelaMenuCobra.add(labelOpcaoListaCobra);// Adiciona a label 1 no painel
 		
-		JLabel labelOpcaoDeletarCobra = new JLabel("G3 - DELETAR COBRA");//Cria a label 1
+		JLabel labelOpcaoDeletarCobra = new JLabel("C3 - DELETAR COBRA");//Cria a label 1
 		panelTelaMenuCobra.add(labelOpcaoDeletarCobra);// Adiciona a label 1 no painel
+		
+		JLabel labelOpcaoAlterarCobra = new JLabel("C4 - ALTERAR COBRA");//Cria a label 1
+		panelTelaMenuCobra.add(labelOpcaoAlterarCobra);// Adiciona a label 1 no painel
+		
 		
 		panelTelaMenuCobra.setLayout(grid);
 		

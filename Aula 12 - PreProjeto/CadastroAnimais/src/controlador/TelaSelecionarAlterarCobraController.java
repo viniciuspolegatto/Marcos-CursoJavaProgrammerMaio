@@ -1,16 +1,14 @@
 package controlador;
 
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.accessibility.Accessible;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import entidade.Cobra;
-import repositorio.CobraRepositorioImplemetacao;
+import repositorio.CobraRepositorioImplementacao;
 import tela.TelaFormularioAlterarCobra;
 
 public class TelaSelecionarAlterarCobraController implements ActionListener {
@@ -19,7 +17,7 @@ public class TelaSelecionarAlterarCobraController implements ActionListener {
 	JFrame jFrameTelaAlterar;
 	
 	
-	CobraRepositorioImplemetacao cobraRepositorioImplemetacao = new CobraRepositorioImplemetacao();
+	CobraRepositorioImplementacao cobraRepositorioImplementacao = new CobraRepositorioImplementacao();
 	TelaFormularioAlterarCobra alterarCobra = new TelaFormularioAlterarCobra();
 
 	
@@ -31,7 +29,7 @@ public class TelaSelecionarAlterarCobraController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Cobra cobra  = cobraRepositorioImplemetacao.buscaCobraPorCaf(caf.getText());
+		Cobra cobra  = cobraRepositorioImplementacao.buscaCobraPorCaf(caf.getText());
 		
 		if ( cobra == null) {
 			JOptionPane.showMessageDialog(null, "Não foi encontrado o seguinte CAF: " + caf.getText() );
