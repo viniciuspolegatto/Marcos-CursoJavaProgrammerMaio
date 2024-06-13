@@ -32,6 +32,7 @@ public class TelaMenuCobra {
 		
 		JLabel labelOpcaoCadastroCobra = new JLabel("C1 - CADASTRAR COBRA");//Cria a label 1
 		panelTelaMenuCobra.add(labelOpcaoCadastroCobra);// Adiciona a label 1 no painel
+			
 		
 		JLabel labelOpcaoListaCobra = new JLabel("C2 - LISTAR COBRA");//Cria a label 1
 		panelTelaMenuCobra.add(labelOpcaoListaCobra);// Adiciona a label 1 no painel
