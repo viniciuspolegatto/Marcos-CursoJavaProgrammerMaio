@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 
 public class FabricaConexao {
 	
-	private static String USUARIO = "root"; // O usuario do banco
-	private static String SENHA = "root"; // A senha do banco
+	private static String USUARIO = "enge4068_impacta"; // O usuario do banco
+	private static String SENHA = "imp@cta1"; // A senha do banco
 	private static String BANCO_URL = "jdbc:mysql://localhost:3306/cadastro_animal?useTimezone=true&serverTimezone=UTC";//URL DO BANCO
 	
 	public Connection criarConexaoComBaseCadastroAnimal() {

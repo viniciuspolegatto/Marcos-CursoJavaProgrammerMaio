@@ -1,12 +1,11 @@
 package repositorio;
 
-import java.util.List;
-
+import java.util.List; 
 import entidade.Cobra;
 
 public interface CobraRepositorio {
 	
-	public boolean salvarCobraRepositorio(Cobra cobra);
+	public boolean salvarCobraRepositorio(Cobra cobra, String qtdQuilos);
 	
 	public List<Cobra> listarCobraRepositorio();
 	

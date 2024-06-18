@@ -8,10 +8,19 @@ import persistencia.DaoCobra;
 public class CobraRepositorioImplementacao implements CobraRepositorio {
 
 	@Override // Aponte que esse metodo é uma SobEscrita de um metodo da interface
-	public boolean salvarCobraRepositorio(Cobra cobra) {
+	public boolean salvarCobraRepositorio(Cobra cobra, String qtdQuilos) {
 		DaoCobra daoCobra = new DaoCobra();
+		EntidadeServico entidadeServico = new EntidadeServico();
+		
+		if (entidadeServico.buscarValorCobra(qtdQuilos) == null) {
+			return false;
+		}else {
+			cobra.setValor(entidadeServico.buscarValorCobra(qtdQuilos));
 		return daoCobra.salvarCobra(cobra);
+		}
 	}
+	
+		
 
 	@Override
 	public List<Cobra> listarCobraRepositorio() {
