@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import tela.TelaMenuCobra;
-import tela.TelaMenuCachorro;
+import tela.cachorro.TelaMenuCachorro;
+import tela.cobra.TelaMenuCobra;
 
 
 /*public class TelaMenuInicialController implements ActionListener {

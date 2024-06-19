@@ -1,4 +1,4 @@
-package tela;
+package tela.cobra;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;

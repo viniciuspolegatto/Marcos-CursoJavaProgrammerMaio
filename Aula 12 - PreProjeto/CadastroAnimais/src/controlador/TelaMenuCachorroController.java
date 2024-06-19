@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import tela.TelaCadastroCachorro;
-import tela.TelaCadastroCobra;
+import tela.cachorro.TelaCadastroCachorro;
+import tela.cobra.TelaCadastroCobra;
 
 public class TelaMenuCachorroController implements ActionListener {
 

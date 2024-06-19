@@ -1,7 +1,6 @@
-package tela;
+package tela.cobra;
 
 import java.awt.Dimension;
-import java.awt.TextField;
 import java.awt.Toolkit;
 import java.util.List;
 
@@ -10,13 +9,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
-import controlador.TelaDeletarCobraController;
+import controlador.TelaSelecionarAlterarCobraController;
 import entidade.Cobra;
 
-public class TelaDeletarCobra {
-
-	public void chamarTelaDeletarCobra(List<Cobra> listaCobras) {
+public class TelaSelecionarAlterarCobra {
+	
+	public void chamarTelaeletarCobra(List<Cobra> listaCobras) {
 
 		int quantidadeDeLinhas = listaCobras.size();
 
@@ -42,14 +42,14 @@ public class TelaDeletarCobra {
 
 		String nomeColunas[] = { "CAF", "NOME", "ESPÉCIE" };
 
-		JFrame frameDeletarCobras = new JFrame();
-		
+		JFrame framealterarCobras = new JFrame();
+
         // Posicionar a janela no centro da tela
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        frameDeletarCobras.setLocation(dim.width / 2 - frameDeletarCobras.getSize().width / 2, 
-                                     dim.height / 2 - frameDeletarCobras.getSize().height / 2);
-
-		frameDeletarCobras.setSize(475, 450);
+        framealterarCobras.setLocation(dim.width / 2 - framealterarCobras.getSize().width / 2, 
+                                     dim.height / 2 - framealterarCobras.getSize().height / 2);
+        
+		framealterarCobras.setSize(475, 450);
 
 		JTable tabelaCobras = new JTable(tabelaString, nomeColunas);
 		tabelaCobras.setSize(1000, 1000);
@@ -63,17 +63,16 @@ public class TelaDeletarCobra {
 
 		panelListarCobra.add(scrollPaneListarCobra);
 		
-		TextField caf = new TextField(10);
+		JTextField caf = new JTextField(10);
 		panelListarCobra.add(caf);
 		
-		JButton botaoDeletar = new JButton("Deletar");
-		panelListarCobra.add(botaoDeletar);
+		JButton botaoalterar = new JButton("Alterar");
+		panelListarCobra.add(botaoalterar);
 
-		frameDeletarCobras.add(panelListarCobra);
-		frameDeletarCobras.setVisible(true);
+		framealterarCobras.add(panelListarCobra);
+		framealterarCobras.setVisible(true);
 		
-		TelaDeletarCobraController telaDeletarCobraController = new TelaDeletarCobraController(caf,frameDeletarCobras);
-		botaoDeletar.addActionListener(telaDeletarCobraController);
-
+		TelaSelecionarAlterarCobraController alterarCobraController = new TelaSelecionarAlterarCobraController(caf, framealterarCobras);
+		botaoalterar.addActionListener(alterarCobraController);
 	}
 }

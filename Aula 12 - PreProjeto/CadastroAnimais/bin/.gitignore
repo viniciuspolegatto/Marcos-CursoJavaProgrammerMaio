@@ -1,9 +1,7 @@
-/principal/
-/tela/
-/Teste/
-/Teste2/
-/servico/
-/validacao/
-/controlador/
 /persistencia/
+/controlador/
+/entidade/
+/enuns/
 /repositorio/
+/servico/
+/tela/

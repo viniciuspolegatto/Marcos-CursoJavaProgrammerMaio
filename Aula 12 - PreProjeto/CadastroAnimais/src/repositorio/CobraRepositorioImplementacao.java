@@ -1,9 +1,10 @@
 package repositorio;
 
-import java.util.List; 
+import java.util.List;  
 
 import entidade.Cobra;
 import persistencia.DaoCobra;
+import servico.EntidadeServico;
 
 public class CobraRepositorioImplementacao implements CobraRepositorio {
 

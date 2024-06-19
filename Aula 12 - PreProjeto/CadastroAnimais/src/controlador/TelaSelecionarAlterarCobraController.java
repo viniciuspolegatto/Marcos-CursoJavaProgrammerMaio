@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 import entidade.Cobra;
 import repositorio.CobraRepositorioImplementacao;
-import tela.TelaFormularioAlterarCobra;
+import tela.cobra.TelaFormularioAlterarCobra;
 
 public class TelaSelecionarAlterarCobraController implements ActionListener {
 

@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import repositorio.CobraRepositorioImplementacao;
-import tela.TelaMenuCobra;
+import tela.cobra.TelaMenuCobra;
 
 public class TelaDeletarCobraController implements ActionListener {
 

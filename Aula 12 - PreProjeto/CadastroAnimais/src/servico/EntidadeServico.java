@@ -20,7 +20,7 @@ public class EntidadeServico {
 		return null;
 	} */
 	
-	public Double buscarCustoCobra(String qtdQuilos) {
+	public Double buscarValorCobra(String qtdQuilos) {
 		Cobra cobra = new Cobra();
 		EntidadeValidacao entidadeValidacao = new EntidadeValidacao();
 		

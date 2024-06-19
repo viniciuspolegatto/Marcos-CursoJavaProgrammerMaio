@@ -8,6 +8,7 @@ public abstract class CadastroGeral {
 	private String nome;
 	private String caf;
 	private String especie;
+	private Double valor;
 	
 	
 	
@@ -30,6 +31,20 @@ public abstract class CadastroGeral {
 		this.especie = especie;
 	}
 	
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+
+	//Metodo Para calcular o salario vai ser a qtd * o salario padra de cada cargo
+	public Double calcularValor(int qtdQuilos) {
+		
+		return qtdQuilos * 9.30;
+		
+	}
 	
 
 	

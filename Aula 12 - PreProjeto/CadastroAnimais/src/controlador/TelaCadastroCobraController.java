@@ -4,10 +4,13 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import entidade.Cobra;
+import enuns.EspecieEnum;
 import gerenciaArquivo.ManipuladorArquivo;
 //import persistencia.DaoCobra;
 import repositorio.CobraRepositorioImplementacao;
@@ -16,7 +19,9 @@ public class TelaCadastroCobraController implements ActionListener {
 
 	JTextField caixaTextoPrimeiroCampoRecebidoNome;
 	JTextField caixaTextoSegundoCampoRecebidoCaf;
-	JTextField caixaTextoTerceiroCampoRecebidoEspecie;
+	JComboBox<EspecieEnum> caixaSelecaoEspecie;
+	JTextField qtdQuilos;
+	JFrame frameTelaCadastroCobra;
 	
 	
 	ManipuladorArquivo manipuladorArquivo = new ManipuladorArquivo();
@@ -25,11 +30,14 @@ public class TelaCadastroCobraController implements ActionListener {
 	
 	
 	public TelaCadastroCobraController(JTextField caixaTextoPrimeiroCampoRecebidoNome,
-			JTextField caixaTextoSegundoCampoRecebidoCaf, JTextField caixaTextoTerceiroCampoRecebidoEspecie) {
+			JTextField caixaTextoSegundoCampoRecebidoCaf, JComboBox<EspecieEnum> caixaSelecaoEspecie,
+			JFrame frameTelaCadastroCobra, JTextField qtdQuilos) {
 		
 		this.caixaTextoPrimeiroCampoRecebidoNome = caixaTextoPrimeiroCampoRecebidoNome;
 		this.caixaTextoSegundoCampoRecebidoCaf = caixaTextoSegundoCampoRecebidoCaf;
-		this.caixaTextoTerceiroCampoRecebidoEspecie = caixaTextoTerceiroCampoRecebidoEspecie;
+		this.caixaSelecaoEspecie = caixaSelecaoEspecie;
+		this.frameTelaCadastroCobra = frameTelaCadastroCobra;
+		this.qtdQuilos = qtdQuilos;
 	}
 
 
@@ -40,7 +48,8 @@ public class TelaCadastroCobraController implements ActionListener {
 		
 		System.out.println("o nome: " + caixaTextoPrimeiroCampoRecebidoNome.getText());
 		System.out.println("o caf: " + caixaTextoSegundoCampoRecebidoCaf.getText());
-		System.out.println("a especie: " + caixaTextoTerceiroCampoRecebidoEspecie.getText());
+		System.out.println("a especie: " + caixaSelecaoEspecie.getSelectedItem().toString());
+		frameTelaCadastroCobra.setVisible(false);
 		
 		
 	}
@@ -49,12 +58,12 @@ public class TelaCadastroCobraController implements ActionListener {
 		Cobra cobra = new Cobra();
 		cobra.setNome(caixaTextoPrimeiroCampoRecebidoNome.getText());
 		cobra.setCaf(caixaTextoSegundoCampoRecebidoCaf.getText());
-		cobra.setEspecie(caixaTextoTerceiroCampoRecebidoEspecie.getText());
+		cobra.setEspecie(caixaSelecaoEspecie.getSelectedItem().toString());
 		
 		manipuladorArquivo.registrarCobra(cobra);
 		
 		
-		if(cobraRepositorioImp.salvarCobraRepositorio(cobra)){
+		if(cobraRepositorioImp.salvarCobraRepositorio(cobra, qtdQuilos.getText())){
 			JOptionPane.showMessageDialog(null, "Salvou com sucesso");
 		}else {
 			JOptionPane.showMessageDialog(null, "Sem sucesso - Não Salvou");

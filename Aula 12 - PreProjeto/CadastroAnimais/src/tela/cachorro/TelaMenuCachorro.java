@@ -1,4 +1,4 @@
-package tela;
+package tela.cachorro;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;

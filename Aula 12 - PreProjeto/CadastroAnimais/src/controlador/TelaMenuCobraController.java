@@ -8,10 +8,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import repositorio.CobraRepositorioImplementacao;
-import tela.TelaCadastroCobra;
-import tela.TelaDeletarCobra;
-import tela.TelaListarCobra;
-import tela.TelaSelecionarAlterarCobra;
+import tela.cobra.TelaCadastroCobra;
+import tela.cobra.TelaDeletarCobra;
+import tela.cobra.TelaListarCobra;
+import tela.cobra.TelaSelecionarAlterarCobra;
 
 
 public class TelaMenuCobraController implements ActionListener {
