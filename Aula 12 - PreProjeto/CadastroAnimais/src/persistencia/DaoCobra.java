@@ -34,6 +34,7 @@ public class DaoCobra {
 			preparaOcomandoSQL.setString(1, cobra.getCaf());// Coloca o valor no campo caf
 			preparaOcomandoSQL.setString(2, cobra.getNome()); // Colocar o valor no campo nome
 			preparaOcomandoSQL.setString(3, cobra.getEspecie()); // Colocar o valor no campo especie
+			preparaOcomandoSQL.setString(4, cobra.getValor().toString());
 
 			preparaOcomandoSQL.execute(); // Executa o comando no banco de dados
 
@@ -185,13 +186,13 @@ public class DaoCobra {
 
 			preparaOcomandoSQL.execute(); // Executa o comando no banco de dados
 
-			System.out.println("A pessoa foi registrada");// Log
+			System.out.println("O Animal foi registrado");// Log
 
 			salvamento = true; // Se tudo funcionar certo
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			System.out.println(" Não foi possivel salvar a pessoa!!!");
+			System.out.println(" Não foi possivel salvar o animal!!!");
 
 		} finally { // Esse é obrigatorio
 			try {
