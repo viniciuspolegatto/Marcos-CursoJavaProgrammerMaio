@@ -8,16 +8,16 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import telasClienteGeral.TelaMenuClienteGeral;
-import telasClientePremium.TelaCadastroPremium;
-import telasClientePremium.TelaDeletePremium;
-import telasClientePremium.TelaMenuClientePremium;
+import telas.correntistaGeral.TelaMenuCorrentistaGeral;
+import telas.correntistaPremium.TelaCadastroPremium;
+import telas.correntistaPremium.TelaDeletePremium;
+import telas.correntistaPremium.TelaMenuCorrentistaPremium;
 
 
-public class ControladorTelaMenuClientePremium implements ActionListener {
+public class ControladorTelaMenuCorrentistaPremium implements ActionListener {
 		
 	//ESSES SÃO OS ATRIBUTOS DA CLASSE ANTERIOR, SERVEM PARA LIGAR O CONTROLADOR COM AS ESTÂNCIAS DA TELA 
-	JFrame frameTelaMenuClientePremium;
+	JFrame frameTelaMenuCorrentistaPremium;
 	JButton botaoCadastrarPremium;
 	JButton botaoListarPremium;
 	JButton botaoEditarPremium;
@@ -31,8 +31,8 @@ public class ControladorTelaMenuClientePremium implements ActionListener {
 	
 	
 	//CHAMANDO UM MÉTODO PARA TRABALHAR NA CLASSE CONTROLADOR DO MENU INICIAL
-	public ControladorTelaMenuClientePremium (JFrame frameTelaMenuClientePremium) {
-		this.frameTelaMenuClientePremium = frameTelaMenuClientePremium;
+	public ControladorTelaMenuCorrentistaPremium (JFrame frameTelaMenuCorrentistaPremium) {
+		this.frameTelaMenuCorrentistaPremium = frameTelaMenuCorrentistaPremium;
 	}
 	
 	//AÇÃO DE POLIMORFISMO DEVIDO AO USAR IMPLEMENTS NA DEFINIÇÃO DA CLASSE
@@ -42,11 +42,11 @@ public class ControladorTelaMenuClientePremium implements ActionListener {
 	        if ("CADASTRAR_PREMIUM".equals(command)) {
 	            telaCadastroPremium.chamarTelaCadastroPremium();
 	            System.out.println("Direcione para tela do Cadastro Premium");
-	            frameTelaMenuClientePremium.setVisible(false);
+	            frameTelaMenuCorrentistaPremium.setVisible(false);
 	        } else if ("DELETAR_PREMIUM".equals(command)) {
 	            telaDeletePremium.chamarTelaDeletePremium();
 	            System.out.println("Direcione para tela Deletar Premium");
-	            frameTelaMenuClientePremium.setVisible(false);
+	            frameTelaMenuCorrentistaPremium.setVisible(false);
 	        } else if ("ENTER".equals(command)) {
 	         	JOptionPane.showMessageDialog(null, "A opção não é válida");   
 	        } else {

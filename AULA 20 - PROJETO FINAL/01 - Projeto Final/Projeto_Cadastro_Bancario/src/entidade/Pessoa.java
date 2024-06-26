@@ -7,6 +7,7 @@ public class Pessoa {
 	// ENCAPSULAMENTO
 	private String nome;
 	private String cpf;
+	private Double transacoes;
 	
 	
 	
@@ -23,9 +24,17 @@ public class Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
-	
-	
+	public Double getTransacoes() {
+		return transacoes;
+	}
+	public void setTransacoes(Double transacoes) {
+		this.transacoes = transacoes;
+	}
+	//Metodo Para calcular o salario vai ser a qtd * o salario padra de cada cargo
+	public Double calcularBeneficioPremium(int transacoes) {
+		
+		return transacoes * 9.30;
+	}
 	
 	
 }

@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import telasClienteGeral.TelaMenuClienteGeral;
-import telasClientePremium.TelaMenuClientePremium;
+import telas.correntistaGeral.TelaMenuCorrentistaGeral;
+import telas.correntistaPremium.TelaMenuCorrentistaPremium;
 
 public class ControladorTelaMenuInicial implements ActionListener {
 	
@@ -22,8 +22,8 @@ public class ControladorTelaMenuInicial implements ActionListener {
 	
 	//ESTANCIANDO OS ELEMENTOS - ESSA AÇÃO VAI TRAZER AS REFERÊNCIAS ONDE SERÃO OS DIRECIONAMENTOS
 	// PARA OS PRÓXIMOS PASSOS
-	TelaMenuClientePremium telaMenuClientePremium = new TelaMenuClientePremium();
-	TelaMenuClienteGeral telaMenuClienteGeral = new TelaMenuClienteGeral();
+	TelaMenuCorrentistaPremium telaMenuCorrentistaPremium = new TelaMenuCorrentistaPremium();
+	TelaMenuCorrentistaGeral telaMenuCorrentistaGeral = new TelaMenuCorrentistaGeral();
 	
 	
 	//CHAMANDO UM MÉTODO PARA TRABALHAR NA CLASSE CONTROLADOR DO MENU INICIAL
@@ -37,12 +37,12 @@ public class ControladorTelaMenuInicial implements ActionListener {
 	    public void actionPerformed(ActionEvent e) {
 	        String command = e.getActionCommand();
 	        if ("MENU_PREMIUM".equals(command)) {
-	            telaMenuClientePremium.chamarTelaMenuClientePremium();
-	            System.out.println("Direcione para tela do cliente premium");
+	            telaMenuCorrentistaPremium.chamarTelaMenuCorrentistaPremium();
+	            System.out.println("Direcione para tela do correntista premium");
 	            frameTelaInicial.setVisible(false);
 	        } else if ("MENU_STANDARD".equals(command)) {
-	            telaMenuClienteGeral.chamarTelaMenuClienteGeral();
-	            System.out.println("Direcione para tela do cliente standard");
+	            telaMenuCorrentistaGeral.chamarTelaMenuCorrentistaGeral();
+	            System.out.println("Direcione para tela do correntista standard");
 	            frameTelaInicial.setVisible(false);
 	        } else if ("ENTER".equals(command)) {
 	            caixaDeTexto();   
@@ -55,13 +55,13 @@ public class ControladorTelaMenuInicial implements ActionListener {
 	        String input = opcaoTexto.getText();
 	        switch (input) {
 	            case "1":
-	                telaMenuClientePremium.chamarTelaMenuClientePremium();
-	                System.out.println("Direcione para tela do Cliente Premium");
+	                telaMenuCorrentistaPremium.chamarTelaMenuCorrentistaPremium();
+	                System.out.println("Direcione para tela do Correntista Premium");
 	                frameTelaInicial.setVisible(false);
 	                break;
 	            case "2":
-	                telaMenuClienteGeral.chamarTelaMenuClienteGeral();
-	                System.out.println("Direcione para tela do cliente Geral");
+	                telaMenuCorrentistaGeral.chamarTelaMenuCorrentistaGeral();
+	                System.out.println("Direcione para tela do correntista Geral");
 	                frameTelaInicial.setVisible(false);
 	                break;
 	            case "3":

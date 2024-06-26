@@ -1,4 +1,4 @@
-package telasClientePremium;
+package telas.correntistaPremium;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;

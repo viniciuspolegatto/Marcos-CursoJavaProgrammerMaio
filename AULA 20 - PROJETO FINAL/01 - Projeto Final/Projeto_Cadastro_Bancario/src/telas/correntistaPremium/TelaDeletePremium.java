@@ -1,4 +1,4 @@
-package telasClientePremium;
+package telas.correntistaPremium;
 
 public class TelaDeletePremium {
 

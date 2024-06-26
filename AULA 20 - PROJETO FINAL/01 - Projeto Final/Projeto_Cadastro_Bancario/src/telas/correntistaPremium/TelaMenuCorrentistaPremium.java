@@ -1,4 +1,4 @@
-package telasClientePremium;
+package telas.correntistaPremium;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -11,50 +11,50 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.BorderFactory;
 
-import controladores.ControladorTelaMenuClientePremium;
+import controladores.ControladorTelaMenuCorrentistaPremium;
 
 
-public class TelaMenuClientePremium {
+public class TelaMenuCorrentistaPremium {
 
-    public void chamarTelaMenuClientePremium() {
+    public void chamarTelaMenuCorrentistaPremium() {
         JFrame frameTelaMenuCLientePremium = new JFrame("MENU CLIENTE PREMIUM"); // Instanciando um JFrame com título
 
         // Definir comportamento de fechamento
         frameTelaMenuCLientePremium.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Configurar o layout do painel
-        JPanel panelTelaMenuClientePremium = new JPanel(new GridLayout(0, 1, 5, 5)); // 5 pixels de espaço entre os componentes
-        panelTelaMenuClientePremium.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Margem ao redor do painel
+        JPanel panelTelaMenuCorrentistaPremium = new JPanel(new GridLayout(0, 1, 5, 5)); // 5 pixels de espaço entre os componentes
+        panelTelaMenuCorrentistaPremium.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Margem ao redor do painel
 
         JLabel labelMensagemTopo = new JLabel("<html><div style='text-align: center;'>APERTE O BOTÃO PARA <br> SEGUIR NA OPÇÃO DESEJADA</div></html>", SwingConstants.CENTER);
-        panelTelaMenuClientePremium.add(labelMensagemTopo);
+        panelTelaMenuCorrentistaPremium.add(labelMensagemTopo);
 
         JLabel labelEspaco1 = new JLabel("<html><div style='text-align: center;'> <br> </div></html>", SwingConstants.CENTER);
-        panelTelaMenuClientePremium.add(labelEspaco1);
+        panelTelaMenuCorrentistaPremium.add(labelEspaco1);
         
         JButton botaoCadastrarPremium = new JButton("CADASTRAR CLIENTE PREMIUM");
-        panelTelaMenuClientePremium.add(botaoCadastrarPremium);
+        panelTelaMenuCorrentistaPremium.add(botaoCadastrarPremium);
 
         JButton botaoEditarPremium = new JButton("EDITAR CLIENTE PREMIUM");
-        panelTelaMenuClientePremium.add(botaoEditarPremium);
+        panelTelaMenuCorrentistaPremium.add(botaoEditarPremium);
         
         JButton botaoListarPremium = new JButton("LISTAR CLIENTES PREMIUM");
-        panelTelaMenuClientePremium.add(botaoListarPremium);
+        panelTelaMenuCorrentistaPremium.add(botaoListarPremium);
         
         JButton botaoDeletarPremium = new JButton("DELETAR CLIENTE PREMIUM");
-        panelTelaMenuClientePremium.add(botaoDeletarPremium);
+        panelTelaMenuCorrentistaPremium.add(botaoDeletarPremium);
 
         JLabel labelEspaco2 = new JLabel("<html><div style='text-align: center;'> <br> </div></html>", SwingConstants.CENTER);
-        panelTelaMenuClientePremium.add(labelEspaco2);
+        panelTelaMenuCorrentistaPremium.add(labelEspaco2);
 
         JLabel labelEspaco3 = new JLabel("<html><div style='text-align: center;'> <br> </div></html>", SwingConstants.CENTER);
-        panelTelaMenuClientePremium.add(labelEspaco3);
+        panelTelaMenuCorrentistaPremium.add(labelEspaco3);
         
         JButton botaoVoltarInicio = new JButton("VOLTAR");
-        panelTelaMenuClientePremium.add(botaoVoltarInicio);
+        panelTelaMenuCorrentistaPremium.add(botaoVoltarInicio);
 
 
-        frameTelaMenuCLientePremium.add(panelTelaMenuClientePremium); // Adiciona o painel no frame
+        frameTelaMenuCLientePremium.add(panelTelaMenuCorrentistaPremium); // Adiciona o painel no frame
         frameTelaMenuCLientePremium.setSize(300, 350); // Define o tamanho da janela (largura x altura)
 
         // Posicionar a janela no centro da tela
@@ -65,11 +65,11 @@ public class TelaMenuClientePremium {
         frameTelaMenuCLientePremium.setVisible(true); // Torna visível
 
         // Controlador para tratar evento do botão
-        ControladorTelaMenuClientePremium controladorTelaMenuClientePremium = new ControladorTelaMenuClientePremium (frameTelaMenuCLientePremium);
-        botaoCadastrarPremium.addActionListener(controladorTelaMenuClientePremium);
-        botaoListarPremium.addActionListener(controladorTelaMenuClientePremium);
-        botaoEditarPremium.addActionListener(controladorTelaMenuClientePremium);
-        botaoDeletarPremium.addActionListener(controladorTelaMenuClientePremium);
+        ControladorTelaMenuCorrentistaPremium controladorTelaMenuCorrentistaPremium = new ControladorTelaMenuCorrentistaPremium (frameTelaMenuCLientePremium);
+        botaoCadastrarPremium.addActionListener(controladorTelaMenuCorrentistaPremium);
+        botaoListarPremium.addActionListener(controladorTelaMenuCorrentistaPremium);
+        botaoEditarPremium.addActionListener(controladorTelaMenuCorrentistaPremium);
+        botaoDeletarPremium.addActionListener(controladorTelaMenuCorrentistaPremium);
 
         botaoCadastrarPremium.setActionCommand("CADASTRAR_PREMIUM");
         botaoListarPremium.setActionCommand("LISTAR_PREMIUM");

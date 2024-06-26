@@ -3,62 +3,90 @@ package controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import telasClienteGeral.TelaMenuClienteGeral;
-import telasClientePremium.TelaMenuClientePremium;
+import entidade.CorrentistaPremium;
+import repositorio.CorrentistaPremiumRepositorioImplementacao;
 
-public class ControladorTelaCadastroPremium implements ActionListener { {
-	
-	//ESSES SÃO OS ATRIBUTOS DA CLASSE, SERVEM PARA ...
+
+
+public class ControladorTelaCadastroPremium implements ActionListener {
+
+
 	JTextField opcaoTexto;
 	JTextField opcaoTexto3;
 	JTextField opcaoTexto4;
 	JTextField opcaoTexto5;
 	JTextField opcaoTexto6;
 	JTextField opcaoTexto7;
-	JFrame frameTelaInicial;
-	JButton botaoVoltarMenuPremium;
-	JButton botaCadastrarPremium;
+	JFrame frameTelaCadastroPremium;
+	
+	//EnderecoCorrentista enderecoCorrentista = new EnderecoCorrentista();
 	
 	
-	//ESTANCIANDO OS ELEMENTOS - ESSA AÇÃO VAI TRAZER AS REFERÊNCIAS ONDE SERÃO OS DIRECIONAMENTOS
-	// PARA OS PRÓXIMOS PASSOS
-			//TelaMenuClientePremium telaMenuClientePremium = new TelaMenuClientePremium();
-
+	//ManipuladorArquivo manipuladorArquivo = new ManipuladorArquivo();
+	// DaoCorrentistaPremium daoCorrentistaPremium = new DaoCorrentistaPremium() **** NUNCA DEVEMOS CHAMAR A DAO PELO CONTROLLER ***
+	CorrentistaPremiumRepositorioImplementacao correntistaPremiumRepositorioImp = new CorrentistaPremiumRepositorioImplementacao();
 	
 	
-	//CHAMANDO UM MÉTODO PARA TRABALHAR NA CLASSE CONTROLADOR DO MENU INICIAL
-	public ControladorTelaCadastroPremium (JTextField opcaoTexto, JTextField opcaoTexto3, JTextField opcaoTexto4, JTextField opcaoTexto5, JTextField opcaoTexto6, JTextField opcaoTexto7, JFrame frameTelaInicial) {
+	
+	public ControladorTelaCadastroPremium(JTextField opcaoTexto, JTextField opcaoTexto3, JTextField opcaoTexto4,
+			JTextField opcaoTexto5, JTextField opcaoTexto6, JTextField opcaoTexto7, JFrame frameTelaCadastroPremium) {
 		this.opcaoTexto = opcaoTexto;
 		this.opcaoTexto3 = opcaoTexto3;
 		this.opcaoTexto4 = opcaoTexto4;
 		this.opcaoTexto5 = opcaoTexto5;
 		this.opcaoTexto6 = opcaoTexto6;
 		this.opcaoTexto7 = opcaoTexto7;
-		this.frameTelaInicial = frameTelaInicial;
+	
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		CorrentistaPremium correntistaPremiumConfirmacao = populaCorrentistaPremium();
+		int confirmacao = JOptionPane.showConfirmDialog(null, "Confirme os dados:" +"\n"
+														+ correntistaPremiumConfirmacao.getNome()+"\n"
+														+ correntistaPremiumConfirmacao.getCpf()+ "\n"
+														+ correntistaPremiumConfirmacao.getTransacoes()+ "\n"
+														);
+		if(confirmacao == 0) {
+			registrarNoBanco(correntistaPremiumConfirmacao);
+			
+			System.out.println("o nome: " + opcaoTexto.getText());
+			System.out.println("o cpf: " + opcaoTexto3.getText());
+			//System.out.println("a gerencia: " + caixaSelecaoSetor.getSelectedItem().toString());
+			frameTelaCadastroPremium.setVisible(false);
+		}
+		
 	}
 	
+	public void registrarNoBanco(CorrentistaPremium correntistaPremiumConfirmado) {
+		
+		if(correntistaPremiumRepositorioImp.salvarGerenteRepositorio(correntistaPremiumConfirmado, transacoes.getText())){
+			JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+		}else {
+			JOptionPane.showMessageDialog(null, "Não foi possível salvar");
+			
+		}
+		
+	}
 	
-	//AÇÃO DE POLIMORFISMO DEVIDO AO USAR IMPLEMENTS NA DEFINIÇÃO DA CLASSE
-	  @Override
-	    public void actionPerformed(ActionEvent e) {
-	        String command = e.getActionCommand();
-	        if ("CADASTRAR_PREMIUM".equals(command)) {
-	            telaCadastroPremium.chamarTelaMenuClientePremium();
-	            System.out.println("Direcione para tela do cliente premium");
-	            frameTelaInicial.setVisible(false);
-	        } else if ("VOLTAR_MENU_PREMIUM".equals(command)) {
-	            telaCadastroPremium.chamarTelaMenuClienteGeral();
-	            System.out.println("Direcione para tela do cliente standard");
-	            frameTelaInicial.setVisible(false);
-	        } else if ("ENTER".equals(command)) {
-	            caixaDeTexto();   
-	        } else {
-	            caixaDeTexto();
-	        }
-	  }
+	public CorrentistaPremium populaCorrentistaPremium() {
+		CorrentistaPremium correntistaPremium = new CorrentistaPremium();
+		correntistaPremium.setNome(opcaoTexto.getText());
+		correntistaPremium.setCpf(opcaoTexto3.getText());
+		//correntistaPremium.setGerencia(caixaSelecaoSetor.getSelectedItem().toString());
+		try {
+			correntistaPremium.setEndereco(enderecoCorrentista.buscarEnderecoPeloCep(jTextcep.getText()));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return correntistaPremium;
+	}
+
 }
