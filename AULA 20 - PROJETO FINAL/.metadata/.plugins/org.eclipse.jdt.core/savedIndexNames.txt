@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+D:\Git\Marcos-CursoJavaProgrammerMaio\AULA 20 - PROJETO FINAL\.metadata\.plugins\org.eclipse.jdt.core
+4272284755.index
+1865797976.index
+381284756.index
+3413725848.index
